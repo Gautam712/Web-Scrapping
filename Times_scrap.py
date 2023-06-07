@@ -40,3 +40,6 @@ for i in range(1,101):
             day=detail3.find("span",'sim-posted').get_text()
             d['Post_Day']=day.strip('\n').replace('\r\n\t\t    \t\n','& ')
         times.append(d)
+        
+df=pd.json_normalize(times)
+df.to_excel(r"C:\Users\Goutam\OneDrive\Desktop\WebScrapping\TimeJobs_dataset.xlsx",index=False)
